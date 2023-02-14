@@ -23,6 +23,11 @@ public class TodoController {
         this.todoMapper = todoMapper;
     }
 
+    @GetMapping("/")
+    public String helloWorld(){
+        return "To-do Application! made by eunseo ";
+    }
+
     @PostMapping
     public ResponseEntity postTodo(@RequestBody TodoDto.Post todoPost){
 
