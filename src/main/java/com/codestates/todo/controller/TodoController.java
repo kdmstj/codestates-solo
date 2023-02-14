@@ -68,7 +68,9 @@ public class TodoController {
 
         Todo patchedTodo = todoService.updateTodo(todoId, todo);
 
-        return new ResponseEntity(patchedTodo, HttpStatus.OK);
+        TodoDto.Response todoResponse = todoMapper.TodoToTodoResponse(patchedTodo);
+
+        return new ResponseEntity(todoResponse, HttpStatus.OK);
     }
 
     @DeleteMapping()
